@@ -1,0 +1,49 @@
+{
+  "name": "cubitt-command-handler",
+  "version": "0.8.0",
+  "description": "Command handler for the Cubitt backend.",
+  "main": "./dist/cubitt-command-handler.js",
+  "typings": "./dist/cubitt-command-handler.d.ts",
+  "scripts": {
+    "lint": "tslint -c ./src/tslint.json --force -e ./src/{typings,test}/** ./src/**/*.ts",
+    "build": "cd ./src/ && typings install && tsc",
+    "test": "cd dist && mocha --require source-map-support/register",
+    "test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --include-all-sources --report lcovonly -- ./dist/test/ -R spec && remap-istanbul -i ./coverage/coverage.json -o ./coverage/coverage.json && istanbul report lcov",
+    "dev": "npm install && npm run lint && npm run build",
+    "codeclimate": "codeclimate-test-reporter < ./coverage/lcov.info",
+    "typedoc": "rm -rf ./src/typings/ && typedoc --out ./doc/ --module commonjs --exclude **/test/**/*.ts --readme ./readme.md --target ES5 --mode file ./src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:uu-cubitt/command-handler.git"
+  },
+  "keywords": [
+    "cubitt",
+    "cubitt-template"
+  ],
+  "contributors": [
+    "Thomas Ipskamp <thomas.ipskamp@gmail.com>",
+    "Sander Klock <sander.klock@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uu-cubitt/command-handler/issues"
+  },
+  "homepage": "https://uu-cubitt.github.io/command-handler",
+  "devDependencies": {
+    "typescript": "^1.8.9",
+    "typings": "^0.7.12",
+    "tslint": "^3.7.3",
+    "source-map-support": "^0.4.0",
+    "mocha": "^2.4.5",
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.3",
+    "remap-istanbul": "^0.5.1",
+    "codeclimate-test-reporter": "^0.3.1",
+    "typedoc": "^0.3.12"
+  },
+  "dependencies": {
+    "cubitt-commands": "^1.0.0",
+    "cubitt-graph-cqrs": "^0.9.0"
+  }
+}

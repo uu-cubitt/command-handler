@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "5"
+  - "4"
+install:
+  - npm install
+script:
+  - npm run lint
+  - npm run build
+  - npm run test
+after_script:
+  - npm run test-coverage
+  - npm run codeclimate
