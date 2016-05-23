@@ -1,8 +1,6 @@
 {
   "version": false,
-  "dependencies": {
-    "vertx": "file:/./typings/vertx/vertx-js/vertx.d.ts"
-  },
+  "dependencies": {},
   "ambientDevDependencies": {
     "mocha": "registry:dt/mocha#2.2.5+20160317120654"
   },

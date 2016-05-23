@@ -1,6 +1,6 @@
 {
   "name": "cubitt-command-handler",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Command handler for the Cubitt backend.",
   "main": "./dist/cubitt-command-handler.js",
   "typings": "./dist/cubitt-command-handler.d.ts",

@@ -34,7 +34,8 @@ node_modules
 .vscode
 
 # Typescript typings
-src/typings
+src/typings/*
+!src/typings/vertx/
 
 # Typedoc default documentation folder
 doc
